@@ -20,13 +20,16 @@
             console.log('ID Token: ' + id_token);
 
             // Optionally send the ID token to your server with an XMLHttpRequest
-            const xhr = new XMLHttpRequest();
-            xhr.open('POST', 'YOUR_BACKEND_URL');
-            xhr.setRequestHeader('Content-Type', 'application/json');
-            xhr.onload = function() {
-                console.log('Signed in as: ' + xhr.responseText);
-            };
-            xhr.send(JSON.stringify({ token: id_token }));
+            // const xhr = new XMLHttpRequest();
+            // xhr.open('POST', 'YOUR_BACKEND_URL');
+            // xhr.setRequestHeader('Content-Type', 'application/json');
+            // xhr.onload = function() {
+            //     console.log('Signed in as: ' + xhr.responseText);
+            // };
+            // xhr.send(JSON.stringify({ token: id_token }));
+            
+            // For demo purposes, just redirect to home page
+            window.location.href = 'index.html?login=google_success';
         }
 
         function signOut() {

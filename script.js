@@ -1,8 +1,8 @@
-// Search for Hotels Placeholder
-function searchHotel() {
-  alert('Search button clicked');
-  // Replace with actual hotel search logic, like fetching from an API.
-}
+// Search for Hotels Placeholder - This function is redefined later in the file
+// function searchHotel() {
+//   alert('Search button clicked');
+//   // Replace with actual hotel search logic, like fetching from an API.
+// }
 
 // Show Login and Register forms
 function toggleForm(form) {
@@ -87,13 +87,16 @@ function onSignIn(googleUser) {
   
   console.log(`Signed in as: ${profile.getName()} (${profile.getEmail()})`);
 
-  const xhr = new XMLHttpRequest();
-  xhr.open('POST', 'YOUR_BACKEND_URL');
-  xhr.setRequestHeader('Content-Type', 'application/json');
-  xhr.onload = function() {
-    console.log('Signed in as: ' + xhr.responseText);
-  };
-  xhr.send(JSON.stringify({ token: id_token }));
+  // const xhr = new XMLHttpRequest();
+  // xhr.open('POST', 'YOUR_BACKEND_URL');
+  // xhr.setRequestHeader('Content-Type', 'application/json');
+  // xhr.onload = function() {
+  //   console.log('Signed in as: ' + xhr.responseText);
+  // };
+  // xhr.send(JSON.stringify({ token: id_token }));
+  
+  // For demo purposes, just log the sign-in
+  console.log('Google Sign-In successful');
 }
 
 function signOut() {
