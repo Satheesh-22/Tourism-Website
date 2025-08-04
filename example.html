@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Booking Page</title>
+  <link rel="stylesheet" href="styles.css" />
+  
+      <h1>Booking Page </h1>
+  
+</head>
+<body>
+
+<div class="container">
+  <!-- Search Box -->
+  <div class="search-box">
+    <input type="text" placeholder="Enter a destination or property" id="destination" />
+
+    <!-- Date Picker -->
+    <div class="date-picker">
+      <div class="date-item">
+        <label for="checkIn">Check-in</label>
+        <input type="date" id="checkIn" />
+      </div>
+      <div class="date-item">
+        <label for="checkOut">Check-out</label>
+        <input type="date" id="checkOut" />
+      </div>
+    </div>
+
+    <!-- Guests and Rooms -->
+    <div class="guests-rooms">
+      <select id="guests">
+        <option value="1">1 adult</option>
+        <option value="2" selected>2 adults</option>
+        <option value="3">3 adults</option>
+      </select>
+      <select id="rooms">
+        <option value="1" selected>1 room</option>
+        <option value="2">2 rooms</option>
+        <option value="3">3 rooms</option>
+      </select>
+    </div>
+
+    <!-- Search Button -->
+    <button class="search-btn" onclick="searchPlaces()">Search</button>
+  </div>
+
+  <!-- Destination Gallery -->
+  <div class="destination-gallery">
+    <img src="img/delhi1.jpg" alt="New Delhi" onclick="setBackgroundImage('New Delhi and NCR')" />
+    <img src="img/goa1.jpg" alt="Goa" onclick="setBackgroundImage('Goa')" />
+    <img src="img/bangalore1.jpg" alt="Bangalore" onclick="setBackgroundImage('Bangalore')" />
+    <img src="img/chennai1.jpg" alt="Chennai" onclick="setBackgroundImage('Chennai')" />
+  </div>
+
+  <!-- Results Container -->
+  <div id="results"></div>
+</div>
+
+<!-- JS -->
+<script>
+  // Destination to Image Mapping
+  const destinationImages = {
+    "New Delhi and NCR": "img/delhi1.jpg",
+    "Goa": "img/goa1.jpg",
+    "Bangalore": "img/bangalore1.jpg",
+    "Chennai": "img/chennai1.jpg"
+  };
+
+  // Function to Change Background
+  function setBackgroundImage(destination) {
+    document.body.style.backgroundImage = `url('${destinationImages[destination]}')`;
+    document.body.style.backgroundSize = 'cover';
+    document.body.style.backgroundPosition = 'center';
+    document.getElementById('destination').value = destination;
+  }
+
+  // Function to Search and Display Results
+  function searchPlaces() {
+    const destination = document.getElementById('destination').value;
+
+    fetch(`get_hotels.php?location=${destination}`)
+      .then(response => response.json())
+      .then(data => {
+        const resultsContainer = document.getElementById('results');
+        resultsContainer.innerHTML = ''; // Clear previous results
+
+        if (data.length > 0) {
+          data.forEach(hotel => {
+            const hotelCard = `
+              <div class="hotel-card">
+                <h3>${hotel.name}</h3>
+                <p>Location: ${hotel.location}</p>
+                <p>Price: $${hotel.price}</p>
+                <p>Available Rooms: ${hotel.rooms}</p>
+                <a href="${hotel.link}" target="_blank">Register</a>
+              </div>
+            `;
+            resultsContainer.innerHTML += hotelCard;
+          });
+        } else {
+          resultsContainer.innerHTML = `<p>No hotels found for "${destination}"</p>`;
+        }
+      });
+  }
+  const clientId = "x5nyGf4idEQOcAUHSJdPmyvrZAv7jckP"; 
+const clientSecret = "7uxq1gj3qzHpEauR"; 
+
+async function getAccessToken() {
+    const response = await fetch("https://api.amadeus.com/v1/security/oauth2/token", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: `grant_type=client_credentials&client_id=${clientId}&client_secret=${clientSecret}`
+    });
+
+    const data = await response.json();
+    return data.access_token;
+}
+
+</script>
+
+<!-- CSS -->
+<style>
+  /* Global Styles */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    transition: background 0.5s ease;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 800px;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-top: 20px;
+  }
+
+  /* Search Box */
+  .search-box {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  input, select, .search-btn {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 100%;
+  }
+
+  /* Date Picker */
+  .date-picker {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .date-item {
+    width: 48%;
+  }
+
+  label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* Guests and Rooms */
+  .guests-rooms {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+  }
+
+  /* Search Button */
+  .search-btn {
+    background-color: #4A90E2;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .search-btn:hover {
+    background-color: #357ABD;
+  }
+
+  /* Destination Gallery */
+  .destination-gallery {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .destination-gallery img {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .destination-gallery img:hover {
+    transform: scale(1.1);
+  }
+
+  /* Results Display */
+  #results {
+    margin-top: 20px;
+  }
+
+  .hotel-card {
+    border: 1px solid #ddd;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: #fafafa;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .hotel-card h3 {
+    color: #4A90E2;
+    margin: 0 0 8px;
+  }
+
+  .hotel-card p {
+    margin: 4px 0;
+    color: #555;
+  }
+
+  .hotel-card a {
+    color: #4A90E2;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 8px;
+  }
+</style>
+
+
+</body>
+</html>

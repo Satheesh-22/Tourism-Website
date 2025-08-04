@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore India</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Welcome to India Tourism</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="login.html">Log In</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="search-box">
+          <!-- Destination -->
+          <input type="text" id="destination" placeholder="Destination">
+  
+          <!-- Date Picker -->
+          <div class="date-picker">
+              <div class="date-item">
+                  <label for="checkIn">Check-in</label>
+                  <input type="date" id="checkIn">
+              </div>
+              <div class="date-item">
+                  <label for="checkOut">Check-out</label>
+                  <input type="date" id="checkOut">
+              </div>
+          </div>
+  
+          <!-- Guests and Rooms with Increment/Decrement -->
+      
+          <div class="guests-rooms">
+            <!-- Guests Counter -->
+            <div class="counter-container">
+                <label for="guestCount">Guests:</label>
+                <button class="counter-btn" onclick="adjustGuests(-1)">−</button>
+                <span id="guestCount" class="counter-value">2</span>
+                <button class="counter-btn" onclick="adjustGuests(1)">+</button>
+            </div>
+        
+            <!-- Rooms Counter -->
+            <div class="counter-container">
+                <label for="roomCount">Rooms:</label>
+                <button class="counter-btn" onclick="adjustRooms(-1)">−</button>
+                <span id="roomCount" class="counter-value">1</span>
+                <button class="counter-btn" onclick="adjustRooms(1)">+</button>
+            </div>
+          </div>
+        
+  
+          <!-- Search Button -->
+          <button onclick="searchHotel()">Search</button>
+      </div>
+  </div>
+  
+    
+    <section id="home">
+      <h2>Explore the Wonders of India</h2>
+      <p>Discover the rich history, diverse cultures, and natural beauty around the globe. From ancient wonders to modern marvels, there's something for every traveler.</p>
+    </section>
+
+    <section id="about">
+      <h2>About India Tourism</h2>
+      <p>India tourism offers an incredible opportunity to explore different regions, experience new cultures, and create unforgettable memories. Whether you're an adventure seeker or a leisure traveler, India has something amazing for everyone.</p>
+    </section>
+    
+
+    <section class="top-destinations">
+      <h2>Top Tourist Destinations in India</h2>
+      <center>                                  
+        <div class="slider-container">
+          <div class="slides">
+              <div class="slide">
+                  <a href="example.html" target="_blank">
+                      <img src="img/delhi1.jpg" alt="New Delhi and NCR" class="destination-image">
+                      <p>India Gate - Delhi</p>
+                  </a>
+              </div>
+              <div class="slide">
+                  <a href="example.html" target="_blank">
+                      <img src="img/delhi2.jpg" alt="New Delhi and NCR" class="destination-image">
+                      <p>Akshardham Temple-Delhi</p>
+                  </a>
+              </div>
+              <div class="slide">
+                  <a href="example.html" target="_blank">
+                      <img src="img/goa1.jpg" alt="Goa" class="destination-image">
+                      <p>Mangeshi Temple-Goa</p>
+                  </a>
+              </div>
+              <div class="slide">
+                  <a href="example.html" target="_blank">
+                      <img src="img/goa2.jpg" alt="Goa" class="destination-image">
+                      <p>Goa Beach</p>
+                  </a>
+              </div>
+              <div class="slide">
+                  <a href="example.html" target="_blank">
+                      <img src="img/bangalore1.jpg" alt="Bangalore" class="destination-image">
+                      <p>Bangalore Palace-Karnataka</p>
+                  </a>
+              </div>
+              <div class="slide">
+                  <a href="example.html" target="_blank">
+                      <img src="img/bangalore2.jpg" alt="Bangalore" class="destination-image">
+                      <p>Mysore fort-Karnataka</p>
+                  </a>
+              </div>
+              <div class="slide">
+                  <a href="example.html" target="_blank">
+                      <img src="img/chennai1.jpg" alt="Chennai" class="destination-image">
+                      <p>- Thanjavur Pragadheeshwaran Temple-Tamilnadu</p>
+                  </a>
+              </div>
+              <div class="slide">
+                  <a href="example.html" target="_blank">
+                      <img src="img/chennai2.jpg" alt="Chennai" class="destination-image">
+                      <p>Thalaiyar Falls-Tamilnadu</p>
+                  </a>
+              </div>
+          </div>
+      
+          <!-- Navigation buttons -->
+          <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+          <button class="next" onclick="moveSlide(1)">&#10095;</button>
+      </div>
+      
+    </center>
+    </section>
+    
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Explore India. All rights reserved.</p>
+    <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+  </footer>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Explore World</title>
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Sign-In -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+    <!-- External JS -->
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Welcome to World Tourism</h1>
+    </header>
+
+    <!-- Registration Form -->
+    <div class="auth-container" id="register">
+        <h2>Register</h2>
+        <form action="submit_signup.php" method="POST" onsubmit="return validatePassword();">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter a username" required>
+            
+            <label for="email">Email Id:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Create a password" required>
+            
+            <label for="confirm-password">Re-enter Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Re-enter your password" required>
+
+            <!-- Error Message -->
+            <div id="error-message"></div>
+
+            <input type="submit" value="Register">
+        </form>
+
+        <!-- Google Sign-In -->
+        <div class="google-signin">
+            <p>Or<br> Sign up with your Google account:</p>
+            <center>
+                <div id="g_id_onload"
+                    data-client_id="YOUR_GOOGLE_CLIENT_ID"
+                    data-context="signin"
+                    data-ux_mode="popup"
+                    data-callback="onSignIn"
+                    data-auto_prompt="false">
+                </div>
+                <div class="g_id_signin" data-type="standard"></div>
+            </center>
+        </div>
+
+        <p>Already have an account? <a href="login.html">Log in here</a>.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Explore World. All rights reserved.</p>
+    </footer>
+</body>
+</html>

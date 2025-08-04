@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f9f9f9;
+    }
+    
+    header h1 {
+        color: #333;
+    }
+    
+    .details {
+        margin-top: 20px;
+    }
+    
+    #map {
+        margin-top: 20px;
+        border-radius: 12px;
+    }
+    
+    p {
+        font-size: 16px;
+        color: #555;
+</style>
+
+    <header>
+        <h1>Search Results</h1>
+    </header>
+
+    <div id="map" style="height: 500px; width: 100%; border-radius: 12px;"></div>
+
+    <div class="details">
+        <h2 id="location-name"></h2>
+        <p><strong>Latitude:</strong> <span id="latitude"></span></p>
+        <p><strong>Longitude:</strong> <span id="longitude"></span></p>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

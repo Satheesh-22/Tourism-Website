@@ -1,0 +1,528 @@
+/* General Body Styling */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 18px;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    background-image: url('img/back.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Header Styling */
+header {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Navigation Styling */
+nav {
+    margin: 0 auto;
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    gap: 30px; /* Reduced gap for better alignment */
+}
+
+nav ul li {
+    display: flex;
+}
+
+nav ul li a {
+    color: whitesmoke;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: rgba(31, 109, 172, 0.7);
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Auth Container Styling */
+.auth-container {
+    text-align: center;
+    padding: 30px;
+    background-color: transparent;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 30px auto;
+    width: 90%;
+    max-width: 400px;
+}
+
+.auth-container h2 {
+    margin-bottom: 20px;
+}
+
+.auth-container input[type="text"],
+.auth-container input[type="email"],
+.auth-container input[type="password"],
+.auth-container input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.auth-container input[type="submit"] {
+    background-color: #0066cc;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.auth-container input[type="submit"]:hover {
+    background-color: #004c99;
+}
+
+/* Toggle Password Visibility Icon */
+.toggle-password-icon {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+/* Section Styling */
+section {
+    padding: 20px;
+    margin: 20px;
+    background-color: whitesmoke;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+}
+
+/* Search Bar Styling */
+.search-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input,
+.search-bar select {
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 220px;
+    transition: border-color 0.3s ease;
+}
+
+.search-bar input[type="date"]:focus,
+.search-bar select:focus,
+.search-bar input[type="text"]:focus {
+    border-color: #0066cc;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 102, 204, 0.2);
+}
+
+/* Specific Styling for Check-in and Check-out Fields */
+.date-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.date-item label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* Specific Styling for Guests and Rooms */
+.guests-rooms {
+    display: flex;
+    gap: 15px;
+}
+
+.guests-rooms select {
+    width: 150px;
+}
+
+/* Container Styling */
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Search Box Styling - Full Row */
+.search-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 1200px;
+    justify-content: space-between;
+}
+
+/* Input and Select Styling */
+.search-box input,
+.search-box select {
+    flex: 1;
+    padding: 14px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    min-width: 180px;
+    transition: all 0.3s ease;
+    background-color: #f9f9f9;
+    outline: none;
+}
+
+.search-box input:focus,
+.search-box select:focus {
+    border-color: #0066cc;
+    box-shadow: 0 0 8px rgba(0, 102, 204, 0.2);
+}
+
+/* Grouping Check-in and Check-out in a Row */
+.date-picker {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.date-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 250px;
+}
+
+.date-item label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+    padding-left: 5px;
+}
+/* Guests and Rooms Container */
+.guests-rooms {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    gap: 30px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Counter Container Styling */
+.counter-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #f9f9f9;
+    padding: 12px 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.counter-container:hover {
+    background-color: #f0f0f0;
+}
+
+/* Counter Label Styling */
+.counter-container label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Counter Button Styling */
+.counter-btn {
+    background-color: #0066cc;
+    color: #fff;
+    border: none;
+    padding: 6px 14px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 2px 6px rgba(0, 102, 204, 0.2);
+}
+
+.counter-btn:active {
+    transform: scale(0.95);
+}
+
+.counter-btn:hover {
+    background-color: #004c99;
+}
+
+/* Counter Value Styling */
+.counter-value {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    min-width: 40px;
+    text-align: center;
+    padding: 4px;
+    background-color: #e6e6e6;
+    border-radius: 6px;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .guests-rooms {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .counter-container {
+        width: 100%; /* Ensure full width on smaller screens */
+        justify-content: center;
+    }
+
+    .counter-btn {
+        font-size: 18px;
+        padding: 5px 12px;
+    }
+
+    .counter-value {
+        font-size: 16px;
+    }
+}
+
+
+
+/* Search Button Styling */
+.search-box button {
+    padding: 14px 35px;
+    background-color: #0066cc;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 102, 204, 0.2);
+    flex-shrink: 0;
+}
+
+.search-box button:hover {
+    background-color: #004c99;
+    box-shadow: 0 5px 15px rgba(0, 102, 204, 0.4);
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .search-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .date-picker {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .search-box input,
+    .search-box select,
+    .guests-rooms {
+        width: 100%;
+    }
+
+    .search-box button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .search-box {
+        gap: 15px;
+    }
+
+    .search-box input,
+    .search-box select {
+        padding: 12px;
+        font-size: 14px;
+        width: 100%;
+    }
+
+    .search-box button {
+        font-size: 16px;
+        padding: 12px 30px;
+    }
+
+    .date-picker {
+        flex-direction: column;
+    }
+}
+
+
+/* Slider Container */
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* Slide Wrapper */
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Slide Item */
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Image Styling - Fixed Width & Height */
+.destination-image {
+    width: 100%;  /* Ensures full width */
+    height: 500px;  /* Fixed height for uniformity */
+    object-fit: cover;  /* Crops & scales images proportionally */
+    border-radius: 8px;
+}
+
+/* Prev and Next Button Styling */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 22px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+}
+
+/* Position buttons inside the image */
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Hover Effect */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .destination-image {
+        height: 300px;  /* Reduce height for smaller screens */
+    }
+
+    .prev, .next {
+        font-size: 18px;
+        padding: 10px;
+        height: 35px;
+        width: 35px;
+    }
+}
+
+
+/* Virtual Search Section */
+#virtual-search {
+    padding: 20px;
+    margin: 20px;
+    background-color: whitesmoke;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Virtual Search Image */
+.virtual-search-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+/* Details Popup */
+.details-popup {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    max-width: 320px;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive Fixes */
+@media (max-width: 600px) {
+    nav ul {
+        gap: 10px;
+    }
+
+    .search-bar input[type="text"],
+    .search-bar select,
+    .search-bar input[type="date"] {
+        width: 100%; /* Full width for smaller screens */
+    }
+}

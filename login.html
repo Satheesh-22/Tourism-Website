@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Explore World</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+    <script>
+        function onSignIn(googleUser) {
+            const profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId());
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail());
+
+            // The ID token you need to pass to your backend
+            const id_token = googleUser.getAuthResponse().id_token;
+            console.log('ID Token: ' + id_token);
+
+            // Optionally send the ID token to your server with an XMLHttpRequest
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', 'YOUR_BACKEND_URL');
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.onload = function() {
+                console.log('Signed in as: ' + xhr.responseText);
+            };
+            xhr.send(JSON.stringify({ token: id_token }));
+        }
+
+        function signOut() {
+            const auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function() {
+                console.log('User signed out.');
+            });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to World Tourism</h1>
+    </header>
+    <div class="auth-container" id="login">
+        <h2>Login</h2>
+        <form action="submit_login.php" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            <input type="submit" value="Log In">
+        </form>
+        <div class="google-signin">
+            <p>Or <br> Sign in with your Google account:</p>
+            <center>
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        </center>
+        </div>
+        <p>Don't have an account? <a href="register.html">Register here</a>.</p>
+    </div>
+    <footer>
+        <p>&copy; 2025 Explore World. All rights reserved.</p>
+    </footer>
+</body>
+</html>
