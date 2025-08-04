@@ -1,9 +1,3 @@
-// Search for Hotels Placeholder
-function searchHotel() {
-  alert('Search button clicked');
-  // Replace with actual hotel search logic, like fetching from an API.
-}
-
 // Show Login and Register forms
 function toggleForm(form) {
   const loginForm = document.getElementById('login');
@@ -144,17 +138,24 @@ function resumeAutoSlide() {
   slideInterval = setInterval(() => moveSlide(1), 3000);
 }
 
-document.querySelector('.prev').addEventListener('click', () => {
-  stopAutoSlide();
-  moveSlide(-1);
-  resumeAutoSlide();
-});
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
 
-document.querySelector('.next').addEventListener('click', () => {
-  stopAutoSlide();
-  moveSlide(1);
-  resumeAutoSlide();
-});
+if (prevBtn) {
+  prevBtn.addEventListener('click', () => {
+    stopAutoSlide();
+    moveSlide(-1);
+    resumeAutoSlide();
+  });
+}
+
+if (nextBtn) {
+  nextBtn.addEventListener('click', () => {
+    stopAutoSlide();
+    moveSlide(1);
+    resumeAutoSlide();
+  });
+}
    // Default values
    let guestCount = 2;
    let roomCount = 1;
