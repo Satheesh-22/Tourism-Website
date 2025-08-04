@@ -3,10 +3,14 @@ import axios from "axios";
 
 const HotelList = ({ searchParams }) => {
   const [hotels, setHotels] = useState([]);
-  const API_KEY = "YOUR_API_KEY"; // Replace with your OpenTripMap API Key
+  const API_KEY = process.env.REACT_APP_OPENTRIPMAP_API_KEY;
 
   useEffect(() => {
     if (!searchParams.destination) return;
+    if (!API_KEY) {
+      console.error("OpenTripMap API key not found. Please set REACT_APP_OPENTRIPMAP_API_KEY in your environment variables.");
+      return;
+    }
 
     const fetchHotels = async () => {
       try {
