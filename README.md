@@ -113,7 +113,7 @@ Tourism-Website/
 
 Clone the project
 
-git clone https://github.com/your-username/tourism-website.git
+git clone [https://github.com/your-username/tourism-website.git](https://github.com/Satheesh-22/Tourism-Website
 
 
 Open folder
