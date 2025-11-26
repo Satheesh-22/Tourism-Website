@@ -74,7 +74,18 @@ Clean two-column responsive layout
 
 Add your screenshots inside an /images folder, then replace paths below:
 
-<img width="1920" height="1080" alt="Screenshot 2025-11-24 195735" src="https://github.com/user-attachments/assets/7f4f7156-7521-4efc-9cc5-ba9b5ceebc26" />
+<img width="1895" height="915" alt="Screenshot 2025-11-24 195735" src="https://github.com/user-attachments/assets/5e296f25-d6c8-4133-ad49-f4d0ca5911cc" />
+<img width="1896" height="932" alt="Screenshot 2025-11-24 195941" src="https://github.com/user-attachments/assets/23f9f34a-5924-4d3a-89dc-e75796b4dc77" />
+<img width="1899" height="917" alt="Screenshot 2025-11-24 200135" src="https://github.com/user-attachments/assets/c431ab60-7eb1-4a7c-8893-cdc99f0c168a" />
+<img width="1888" height="921" alt="Screenshot 2025-11-24 200312" src="https://github.com/user-attachments/assets/353cd74a-b25b-4301-8dd0-9585ab10bb40" />
+<img width="1654" height="921" alt="Screenshot 2025-11-24 200642" src="https://github.com/user-attachments/assets/fc21793d-4c14-43c2-842c-a233703ef2a2" />
+<img width="1828" height="858" alt="Screenshot 2025-11-24 200823" src="https://github.com/user-attachments/assets/2f01bff1-2614-4b63-899d-d79baa735b05" />
+<img width="1633" height="883" alt="Screenshot 2025-11-24 201802" src="https://github.com/user-attachments/assets/942ba646-89fd-46cf-ad5a-380ca10ee84c" />
+<img width="1885" height="920" alt="Screenshot 2025-11-24 201841" src="https://github.com/user-attachments/assets/84775566-ed07-4566-a971-f4ae31739194" />
+
+
+
+
 
 🛠️ Technologies Used
 Component	Technology
@@ -82,6 +93,9 @@ Frontend	HTML5, CSS3, JavaScript
 UI/UX	Custom gradients, responsive cards, CSS Flexbox/Grid
 Icons	Font Awesome / Custom SVG Icons
 Deployment	GitHub Pages recommended
+
+
+
 #📁 Folder Structure
 Tourism-Website/
 │── index.html
